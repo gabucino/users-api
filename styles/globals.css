@@ -1,9 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: linear-gradient(to left top, #19a186, #f2cf43);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100%;
+  font-family: "Quicksand", sans-serif;
 }
 
 a {
@@ -15,12 +22,22 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+h1 {
+  font-size: 4rem;
+}
+
+@layer components {
+  th,
+  td {
+    @apply pl-3 text-left;
   }
-  body {
-    color: white;
-    background: black;
+  .user-row {
+    @apply text-left hover:bg-darkkhaki;
+  }
+  .extra-column {
+    @apply hidden md:table-cell;
+  }
+  .pagenumber-button {
+    @apply py-2 px-3 text-slate-50 border border-gray-300 bg-lightcyan hover:bg-mediumseagreen  dark:border-gray-700 dark:bg-gray-700 dark:text-white;
   }
 }
